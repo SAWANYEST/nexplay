@@ -1,0 +1,14 @@
+"use client";
+import {useMemo,useState} from 'react';
+import {Search,SlidersHorizontal,ArrowLeft,Gamepad2} from 'lucide-react';
+import {GameCard} from '@/components/GameCard';
+import type {Game} from '@/lib/types';
+export function Explorer({games}:{games:Game[]}){
+ const [search,setSearch]=useState('');const [platform,setPlatform]=useState('الكل');const [genre,setGenre]=useState('الكل');const [sort,setSort]=useState('featured');
+ const genres=[...new Set(games.map(g=>g.genre))];
+ const filtered=useMemo(()=>games.filter(g=>(g.title+' '+g.title_ar).toLowerCase().includes(search.trim().toLowerCase()) && (platform==='الكل'||g.platforms.some(p=>platform==='PlayStation'?p.startsWith('PS'):p.startsWith('Xbox'))) && (genre==='الكل'||g.genre===genre)).sort((a,b)=>sort==='cheap'?a.price_sar-b.price_sar:sort==='newest'?b.release_date.localeCompare(a.release_date):Number(b.featured)-Number(a.featured)),[games,search,platform,genre,sort]);
+ return <section className="explore-section" id="games"><div className="container"><div className="section-heading"><div><div className="eyebrow"><span className="eyebrow-bar"/> مكتبة الألعاب</div><h2>اكتشف <span className="accent">لعبتك القادمة</span></h2><p>استعرض الألعاب حسب جهازك المفضل واكتشف كل التفاصيل قبل اختيارك.</p></div><span className="game-counter">{games.length} ألعاب متاحة للاستكشاف</span></div>
+ <div className="filters"><label className="search-box"><Search size={20}/><input type="search" placeholder="ابحث عن لعبة، مثل GTA أو Mafia..." aria-label="البحث عن الألعاب" value={search} onChange={e=>setSearch(e.target.value)}/><kbd>/</kbd></label><div className="platform-tabs" role="group" aria-label="نوع الجهاز">{['الكل','PlayStation','Xbox'].map(p=><button type="button" key={p} className={platform===p?'selected':''} onClick={()=>setPlatform(p)}>{p}</button>)}</div><label className="filter-select"><SlidersHorizontal size={17}/><select aria-label="تصنيف اللعبة" value={genre} onChange={e=>setGenre(e.target.value)}><option>الكل</option>{genres.map(g=><option key={g}>{g}</option>)}</select></label><label className="filter-select"><select aria-label="ترتيب الألعاب" value={sort} onChange={e=>setSort(e.target.value)}><option value="featured">المميزة أولًا</option><option value="newest">الأحدث إصدارًا</option><option value="cheap">السعر: الأقل أولًا</option></select></label></div>
+ <div className="results-title"><h3>جميع الألعاب <span>({filtered.length})</span></h3></div>{filtered.length?<div className="game-grid">{filtered.map((g,i)=><GameCard game={g} index={i} key={g.id}/>)}</div>:<div className="empty-state"><Gamepad2 size={36}/><h3>لا توجد ألعاب مطابقة</h3><p>جرّب تغيير كلمات البحث أو الفلاتر.</p><button className="btn btn-primary" onClick={()=>{setSearch('');setGenre('الكل');setPlatform('الكل')}}>عرض كل الألعاب</button></div>}
+ </div></section>
+}

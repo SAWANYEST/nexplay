@@ -1,0 +1,23 @@
+export type Game = {
+  id: string;
+  slug: string;
+  title: string;
+  title_ar: string;
+  description: string;
+  release_date: string;
+  developer: string;
+  publisher: string;
+  genre: string;
+  platforms: string[];
+  price_sar: number;
+  cover_url: string;
+  backdrop_url: string;
+  gallery_urls: string[];
+  trailer_id: string;
+  age_rating: string;
+  featured: boolean;
+  is_published: boolean;
+  is_deleted: boolean;
+  created_at?: string;
+};
+export type GameDraft = Omit<Game,"id"|"created_at">;

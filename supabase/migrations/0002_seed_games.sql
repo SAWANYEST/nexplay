@@ -1,0 +1,37 @@
+-- Seed 10 showcase records. Prices in SAR are editorial estimates, not storefront offers.
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('gta-vi', 'Grand Theft Auto VI', 'قراند 6', 'عُد إلى Vice City وولاية Leonida في مغامرة عالم مفتوح جديدة مع لوسيا وجيسون.', '2026-11-19', 'Rockstar Games', 'Rockstar Games', 'عالم مفتوح', ARRAY['PS5','Xbox Series X|S']::text[], 299, 'https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg', 'https://i.ytimg.com/vi/QdBZY2fkU-0/maxresdefault.jpg', 'QdBZY2fkU-0', true, 'قيد التصنيف', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('mafia-ii', 'Mafia II: Definitive Edition', 'مافيا 2', 'قصة فيتو سكاليتا في عالم الجريمة في أربعينيات وخمسينيات القرن العشرين.', '2020-05-19', 'Hangar 13 / D3T', '2K', 'قصة ومغامرات', ARRAY['PS4','Xbox One','PS5 (توافق)','Xbox Series X|S (توافق)']::text[], 109, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1030830/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1030830/header.jpg', '', false, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('black-ops-7', 'Call of Duty: Black Ops 7', 'بلاك أوبس 7', 'عالم من الصراعات المستقبلية عام 2035 وحملة تعاونية مع أنماط تنافسية.', '2025-11-14', 'Treyarch / Raven Software', 'Activision', 'تصويب', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 269, 'https://i.ytimg.com/vi/9txkGBj_trg/maxresdefault.jpg', 'https://i.ytimg.com/vi/9txkGBj_trg/maxresdefault.jpg', '9txkGBj_trg', true, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('modern-warfare-iii', 'Call of Duty: Modern Warfare III', 'مودرن وارفير 3', 'عودة فرقة Task Force 141 لمواجهة ماكاروف، مع اللعب الجماعي والزومبي.', '2023-11-10', 'Sledgehammer Games', 'Activision', 'تصويب', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 249, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3595270/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3595270/header.jpg', '', false, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('gta-iv', 'Grand Theft Auto IV', 'قراند 4', 'نيكو بيليك يصل إلى Liberty City ويواجه عالمًا من الجريمة والقرارات الصعبة.', '2008-04-29', 'Rockstar North', 'Rockstar Games', 'عالم مفتوح', ARRAY['Xbox 360','Xbox One (توافق)','Xbox Series X|S (توافق)','PS3']::text[], 69, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12110/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12110/header.jpg', '', false, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('gta-v', 'Grand Theft Auto V', 'قراند 5', 'ثلاثة أبطال في مدينة Los Santos ومهمات متنوعة في عالم مفتوح واسع.', '2013-09-17', 'Rockstar North', 'Rockstar Games', 'عالم مفتوح', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 119, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg', '', true, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('red-dead-redemption-2', 'Red Dead Redemption 2', 'ريد ديد 2', 'ملحمة آرثر مورغان وعصابة فان دير ليند في الغرب الأمريكي.', '2018-10-26', 'Rockstar Studios', 'Rockstar Games', 'قصة ومغامرات', ARRAY['PS4','PS5 (توافق)','Xbox One','Xbox Series X|S (توافق)']::text[], 149, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg', '', true, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('elden-ring', 'Elden Ring', 'إلدن رينغ', 'تقمص أدوار وقتال زعماء واستكشاف عالم واسع غامض.', '2022-02-25', 'FromSoftware', 'Bandai Namco', 'تقمص أدوار', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 219, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg', '', false, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('forza-horizon-5', 'Forza Horizon 5', 'فورزا هورايزن 5', 'سباقات سيارات في بيئة المكسيك ذات العالم المفتوح.', '2021-11-09', 'Playground Games', 'Xbox Game Studios', 'سباقات', ARRAY['Xbox One','Xbox Series X|S','PS5']::text[], 179, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg', '', false, 'للجميع', true)
+ON CONFLICT (slug) DO NOTHING;
+INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
+VALUES ('cyberpunk-2077', 'Cyberpunk 2077', 'سايبر بانك 2077', 'رحلة تقمص أدوار مستقبلية في مدينة Night City.', '2020-12-10', 'CD Projekt RED', 'CD Projekt', 'تقمص أدوار', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 149, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg', '', false, '18+', true)
+ON CONFLICT (slug) DO NOTHING;
+
+-- Additional promotional art URLs (some stores may change image CDN paths).
+update public.games set gallery_urls = ARRAY['https://i.ytimg.com/vi/INjHGpMRjRA/maxresdefault.jpg','https://i.ytimg.com/vi/tJbzMqJGH4k/maxresdefault.jpg'] where slug='gta-vi';
+update public.games set gallery_urls = ARRAY['https://i.ytimg.com/vi/uUo5gnaYB_w/maxresdefault.jpg'] where slug='black-ops-7';
+update public.games set gallery_urls = ARRAY['https://i.ytimg.com/vi/QkkoHAzjnUs/maxresdefault.jpg'] where slug='gta-v';
+update public.games set gallery_urls = array[replace(cover_url,'/header.jpg','/library_hero.jpg')] where slug not in ('gta-vi','black-ops-7','gta-v');

@@ -1,0 +1,1 @@
+import Link from 'next/link';import {Gamepad2} from 'lucide-react';export default function NotFound(){return <div className="container empty-state notfound"><Gamepad2 size={56}/><h1>الصفحة غير موجودة</h1><p>قد تكون اللعبة محذوفة أو تغيّر رابطها.</p><Link className="btn btn-primary" href="/">العودة للرئيسية</Link></div>}
