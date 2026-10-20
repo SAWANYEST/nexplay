@@ -6,7 +6,7 @@
 ## Architecture (implemented in source / pending integration)
 - Next.js App Router + TypeScript
 - Supabase Auth + PostgreSQL RLS + Storage
-- GitHub source of truth — مستودع مستقل مطلوب
+- GitHub source of truth — https://github.com/SAWANYEST/nexplay
 - Vercel preview ثم إنتاج
 - مدير واحد مبدئيًا عبر public.admins، ولا يجوز منح الصلاحية من واجهة التسجيل.
 
@@ -17,7 +17,7 @@
 | 02 | Frontend and game catalog | coded, needs build tests | Homepage, search, filters, detail pages, video embedding |
 | 03 | Auth and database | coded, not connected | Signup/login/email, admin RLS, favorites, media uploads |
 | 04 | Verification | pending | Typecheck, build, RLS negative tests, browser review |
-| 05 | GitHub & Vercel | pending | Repository source, preview, production, exact commit confirmation |
+| 05 | GitHub & Vercel | GitHub source uploaded; Preview/Production pending | Repository source, preview, production, exact commit confirmation |
 
 ## Safeguards
 - لا تلمس مشروع car-world على GitHub أو مشروع Supabase السابق غير النشط.
@@ -29,12 +29,12 @@
 ## Execution Ledger (2026-10-20)
 - created complete frontend/backend integration source tree in standalone archive;
 - no dependency install/build (package network unavailable in execution sandbox);
-- no GitHub repository created (GitHub connector does not expose repository creation);
+- verified 33 source files uploaded to GitHub repository SAWANYEST/nexplay on branch main; base source commit 3ba023f6c48e0034118eac63fac8d3c89aef24a4;
 - no Supabase project created (requires org/cost consent);
 - no Vercel deployment performed.
 
 ## Handoff Record
 - Work directory: nexplay/
 - SQL scripts: supabase/migrations/
-- Next action: create dedicated private GitHub repository then push files; create separate Supabase project with cost permission; deploy Preview; test acceptance flows.
-- Source/Production commit SHA: not available.
+- Next action: confirm target Supabase organization and any project cost; create independent Supabase project, apply reviewed migrations, connect Vercel Preview, and test acceptance flows.
+- Latest main source commit: 3ba023f6c48e0034118eac63fac8d3c89aef24a4 (before this governance documentation update).\n- Production commit SHA: not available; never deployed.
