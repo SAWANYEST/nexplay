@@ -12,7 +12,7 @@ INSERT INTO public.games (slug, title, title_ar, description, release_date, deve
 VALUES ('modern-warfare-iii', 'Call of Duty: Modern Warfare III', 'مودرن وارفير 3', 'عودة فرقة Task Force 141 لمواجهة ماكاروف، مع اللعب الجماعي والزومبي.', '2023-11-10', 'Sledgehammer Games', 'Activision', 'تصويب', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 249, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3595270/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3595270/header.jpg', '', false, '18+', true)
 ON CONFLICT (slug) DO NOTHING;
 INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
-VALUES ('gta-iv', 'Grand Theft Auto IV', 'قراند 4', 'نيكو بيليك يصل إلى Liberty City ويواجه عالمًا من الجريمة والقرارات الصعبة.', '2008-04-29', 'Rockstar North', 'Rockstar Games', 'عالم مفتوح', ARRAY['Xbox 360','Xbox One (توافق)','Xbox Series X|S (توافق)','PS3']::text[], 69, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12110/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12110/header.jpg', '', false, '18+', true)
+VALUES ('gta-iv', 'Grand Theft Auto IV', 'قراند IV', 'في Grand Theft Auto IV (2008)، يصل نيكو بيليك إلى Liberty City بحثًا عن بداية جديدة، لكنه ينجرف إلى عالم الجريمة في قصة واقعية مليئة بالقرارات الصعبة.', '2008-04-29', 'Rockstar North', 'Rockstar Games', 'عالم مفتوح', ARRAY['Xbox 360','Xbox One (توافق)','Xbox Series X|S (توافق)','PS3']::text[], 69, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/12210/library_hero.jpg', 'M80K51DosFo', false, '18+', true)
 ON CONFLICT (slug) DO NOTHING;
 INSERT INTO public.games (slug, title, title_ar, description, release_date, developer, publisher, genre, platforms, price_sar, cover_url, backdrop_url, trailer_id, featured, age_rating, is_published)
 VALUES ('gta-v', 'Grand Theft Auto V', 'قراند 5', 'ثلاثة أبطال في مدينة Los Santos ومهمات متنوعة في عالم مفتوح واسع.', '2013-09-17', 'Rockstar North', 'Rockstar Games', 'عالم مفتوح', ARRAY['PS4','PS5','Xbox One','Xbox Series X|S']::text[], 119, 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg', 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg', '', true, '18+', true)
@@ -31,7 +31,8 @@ VALUES ('cyberpunk-2077', 'Cyberpunk 2077', 'سايبر بانك 2077', 'رحل�
 ON CONFLICT (slug) DO NOTHING;
 
 -- Additional promotional art URLs (some stores may change image CDN paths).
+update public.games set gallery_urls = ARRAY['https://www.thegtaplace.com/images/gta4/screenshots/pc/gta-iv-pc-screenshot_038.jpg','https://www.igrandtheftauto.com/content/images/2942-gtaiv-gta-4-screenshots.jpg','https://www.igrandtheftauto.com/content/images/2948-gtaiv-gta-4-screenshots.jpg'] where slug='gta-iv';
 update public.games set gallery_urls = ARRAY['https://i.ytimg.com/vi/INjHGpMRjRA/maxresdefault.jpg','https://i.ytimg.com/vi/tJbzMqJGH4k/maxresdefault.jpg'] where slug='gta-vi';
 update public.games set gallery_urls = ARRAY['https://i.ytimg.com/vi/uUo5gnaYB_w/maxresdefault.jpg'] where slug='black-ops-7';
 update public.games set gallery_urls = ARRAY['https://i.ytimg.com/vi/QkkoHAzjnUs/maxresdefault.jpg'] where slug='gta-v';
-update public.games set gallery_urls = array[replace(cover_url,'/header.jpg','/library_hero.jpg')] where slug not in ('gta-vi','black-ops-7','gta-v');
+update public.games set gallery_urls = array[replace(cover_url,'/header.jpg','/library_hero.jpg')] where slug not in ('gta-vi','black-ops-7','gta-v','gta-iv');
